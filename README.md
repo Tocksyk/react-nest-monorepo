@@ -5,21 +5,12 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+  <p align="center">A Boilerplate for <b>NodeJS-NESTJS-React</b> for building efficient Monorepo applications.</p>
     <p align="center">
     <a href="https://github.com/facebook/create-react-app" target="_blank"><img src="https://badges.aleen42.com/src/react.svg" alt="React" /></a>
     <a href="https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html" target="_blank"><img src="https://badges.aleen42.com/src/typescript.svg" alt="TypeScript" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-<a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-<a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-<a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
@@ -29,10 +20,72 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository with **React in Front-End**.
 
-## Installation
+System Requirements
+
+1. MongoDB
+2. MySQl
+3. Node version 14+
+
+## Boiler Plate Features
+
+1. Sample Module for reference with working routes
+2. MongoDB connection
+3. MySQL connection
+4. Centralized configuration and .env files
+
+## Local Boiler Plate Env
+
+```JS
+PORT = 3000
+API_PREFIX = /api
+EXCLUDE_PREFIX = /api/(.*)
+MONGO_URI = mongodb://127.0.0.1:27017
+MONGO_DATABASE = nest
+SQL_DIALECT = mysql
+SQL_HOST = 127.0.0.1
+SQL_PORT = 3306
+SQL_PASSWORD = password
+SQL_USER = root
+SQL_DATABASE = nest
+SPA_1_PATH = client/build
+```
+
+## Getting Started With The App
+
+```Bash
+npm run monorepo:dev
+```
+
+Try hitting below curl to save a user object in mongoDB
+
+```CURL
+curl --location 'localhost:3000/api/sample/mongo' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "ken",
+    "password": "front",
+    "email":"ken@gmail.com",
+    "roles":"User"
+}'
+```
+
+Try hitting below curl to save a user object in MySQL
+
+```CURL
+curl --location 'localhost:3000/api/sample/sql' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "ken",
+    "password": "front",
+    "email":"ken@gmail.com",
+    "roles":"User"
+}'
+```
+
+## Installation Of Monorepo
 
 ```bash
-$ npm install
+$ npm run install:all
 ```
 
 ## Running the app
