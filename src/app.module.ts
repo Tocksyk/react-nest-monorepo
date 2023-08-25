@@ -11,6 +11,11 @@ import sqlConfig from './configs/sql.config';
 import appConfig from './configs/app.config';
 import spaConfig from './configs/spa.config';
 import { join } from 'path';
+import { AuthModule } from './auth/auth.module';
+import { HealthController } from './health/health.controller';
+import { HealthModule } from './health/health.module';
+import { HttpModule } from '@nestjs/axios';
+import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
   imports: [
@@ -33,9 +38,13 @@ import { join } from 'path';
       useFactory: (configService: ConfigService) =>
         configService.get<object>('sql'),
     }),
+    TerminusModule,
+    HttpModule,
     SampleModule,
+    AuthModule,
+    HealthModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, HealthController],
   providers: [AppService],
 })
 export class AppModule {}

@@ -31,7 +31,17 @@ System Requirements
 1. Sample Module for reference with working routes
 2. MongoDB connection
 3. MySQL connection
-4. Centralized configuration and .env files
+4. Centralized env configuration and .env files
+5. Auth Module
+6. Sessionless login using JWT
+7. Local AUthentication
+8. JWT Auth Guards
+9. Local Authentication Guards
+10. Swagger API documentations starter
+11. Swagger Bearer token option
+12. health check module
+13. Memory health check
+14. DB health check
 
 ## Local Boiler Plate Env
 
